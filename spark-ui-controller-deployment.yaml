@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spark-ui-controller
+  name: spark-ui-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spark-ui-controller
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spark-ui-controller
+    spec:
+      serviceAccountName: spark-ui-controller
+      containers:
+      - image: pilillo/spark-ui-controller:v0.0.1
+        name: spark-ui-controller
+        resources: {}
+        env:
+          - name: WATCH_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+status: {}

@@ -1,0 +1,46 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+    operators.operatorframework.io/builder: operator-sdk-v1.12.0+git
+    operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
+  name: spark-ui-controller.v0.0.1
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions: {}
+  description: A K8s controller exposing a route for any driver-svc binding to the
+    Spark UI
+  displayName: spark-ui-controller
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: []
+    strategy: deployment
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - spark
+  - ui
+  links:
+  - name: Spark Ui Controller
+    url: https://spark-ui-controller.domain
+  maintainers:
+  - email: pilillo2002@libero.it
+    name: pilillo
+  maturity: alpha
+  provider:
+    name: pilillo
+    url: https://github.com/pilillo/spark-ui-controller
+  version: 0.0.1
