@@ -123,7 +123,8 @@ func (r *ServiceReconciler) getRouteForSparkUI(svc *corev1.Service) *routev1.Rou
 				Name: svc.Name,
 			},
 			Port: &routev1.RoutePort{
-				TargetPort: intstr.FromString(svc.Name),
+				//TargetPort: intstr.FromString(svc.Name),
+				TargetPort: intstr.FromString("spark-ui"),
 			},
 			/*
 				TLS: &routev1.TLSConfig{
